@@ -1,0 +1,59 @@
+/* Some overrides from default bootstrap styles */
+
+h1,h2,h3,h4,h5,h6{
+	font-weight: normal;
+}
+
+/* COMPONENTS */
+
+
+/* labels */
+.label, .badge {font-weight: lighter;}
+.label-success, .badge-success {
+	background-color: rgb(129, 189, 130);
+}
+.label-info, .badge-info {
+	background-color: rgb(104, 163, 213);
+}
+
+/* alerts */
+.alert [class^="icon-"], 
+.alert [class*=" icon-"] {
+	font-size: 27px;
+	position: relative;
+	top: 4px;
+	margin-bottom: 8px;
+	margin-right: 17px;
+	display: inline-block;
+	color: #f1c359;
+}
+.alert-success [class^="icon-"], 
+.alert-success [class*=" icon-"] {
+	color: #81ad53;
+}
+.alert-info [class^="icon-"], 
+.alert-info [class*=" icon-"] {
+	color: #4993c6;
+}
+.alert-error [class^="icon-"], 
+.alert-error [class*=" icon-"] {
+	color: #d5393e;
+}
+
+
+/* code*/
+code {
+	color: rgb(78, 153, 223);
+}
+
+
+/* HTML ELEMENTS */
+input,
+button,
+select,
+textarea {
+  font-family: "Open Sans", Arial;
+}
+
+
+

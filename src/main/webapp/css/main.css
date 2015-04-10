@@ -1,0 +1,226 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*********************************************************************************/
+/* Geral                                                                         */
+/*********************************************************************************/
+
+.btlogin{
+	clear: left; 
+	width: 100%; 
+	height: 32px; 
+	font-size: 13px;
+	font-family:'Humanist521BT-Roman',Sans-Serif;
+	text-rendering: optimizeLegibility;
+	font-smooth:always;
+}
+
+.centraliza {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+::selection {
+	background: #e5173f; /* Safari */
+}
+::-moz-selection {
+ background: #e5173f; /* Firefox */
+}
+/*********************************************************************************/
+/* Login Form                                                                       */
+/*********************************************************************************/
+
+#login_box {
+ 
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top:auto;
+	margin-left: -265px;
+	width: 530px;
+	height: 328px;
+	/*background-color:#093;
+		background-image:url(../img/logo_bg.png);
+	background-position: top left;
+	background-repeat:no-repeat;*/
+	display: block;
+	border: dotted transparent thin;
+/*	-webkit-transition-duration: 1s;
+	-moz-transition-duration: 1s;	*/
+}
+#logo_img {
+	position: relative;
+	float: left;
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+	height: auto;
+	display: block;
+	border: dotted transparent thin;
+}
+.signin-container {
+	float: right;
+	width: 260px;
+	height: auto;
+	margin-top: 130px;
+	margin-right: 30px;/*border: solid #dedede;*/
+}
+.signin-container form .btn, .signin-container input, .signin-container label, .social p {
+	font-family: 'FuturaLTLight';	
+	font-size: 14px;
+}
+.signin-container input, .social p, .signin-container form {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+/*.signin-container .btn {
+	border: none;
+}
+a.header, .social p {
+	-webkit-text-shadow: rgba(0, 0, 0, 0.8) 0 -1px 0;
+	-moz-text-shadow: rgba(0, 0, 0, 0.8) 0 -1px 0;
+	-o-text-shadow: rgba(0, 0, 0, 0.8) 0 -1px 0;
+	text-shadow: rgba(0, 0, 0, 0.8) 0 -1px 0;
+}
+.signin-container form, .signin-container input, .signin-container, a.header span, a.header img, .social a {
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.signin-container form {
+	width: auto;
+}
+.fields {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid rgba(0, 0, 0, 1);
+	-webkit-box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0;
+	-moz-box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0;
+	box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0;
+}*/
+a.forgot-password {
+	font-family: 'FuturaLTLight';	
+	background: rgba(0, 0, 0, 0.05);
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	color: #888;
+	display: block;
+	float: right;
+	font-size: 11px;
+	height: 22px;
+	line-height: 22px;
+	margin: -32px 10px 0 0;
+	padding: 0 6px;
+	position: relative;
+	z-index: 10;
+}
+.signin-container form .btn {
+	line-height: 26px;
+	margin-top: 15px;
+}
+.signin-container input {
+	background:#fff;
+	border: solid #dedede;
+	border-width: 0 0 1px 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	height: 40px;
+	margin: 0;
+	padding: 0 15px;
+	width: 100%;
+}
+.signin-container input[type=password] {
+	padding-right: 70px;
+}
+.signin-container input:nth-child(1) {
+	background-color:#fff;
+	-webkit-border-radius: 3px 3px 0 0;
+	-moz-border-radius: 3px 3px 0 0;
+	border-radius: 3px 3px 0 0;
+}
+.signin-container input:nth-child(2) {
+		background-color:#fff;
+	border: none;
+	-webkit-border-radius: 0 0 3px 3px;
+	-moz-border-radius: 0 0 3px 3px;
+	border-radius: 0 0 3px 3px;
+}
+.signin-container input:focus {
+		background-color:#fff;
+	border-color: #dedede;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+.btn-red {
+	background-color: hsl(0, 66%, 31%) !important;
+	background-repeat: repeat-x;
+ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c62828", endColorstr="#831a1a");
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#c62828), to(#831a1a));
+	background-image: -moz-linear-gradient(top, #c62828, #831a1a);
+	background-image: -ms-linear-gradient(top, #c62828, #831a1a);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c62828), color-stop(100%, #831a1a));
+	background-image: -webkit-linear-gradient(top, #c62828, #831a1a);
+	background-image: -o-linear-gradient(top, #c62828, #831a1a);
+	background-image: linear-gradient(#c62828, #831a1a);
+	border-color: #831a1a #831a1a hsl(0, 66%, 27%);
+	color: #fff !important;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.26);
+	-webkit-font-smoothing: antialiased;
+}
+/*********************************************************************************/
+/* Estilos de Fontes                                                             */
+/*********************************************************************************/
+
+.fonte_branco_30 {
+	font-family: 'FuturaLTLight';
+	text-rendering: optimizeLegibility;
+	font-smooth: always;
+	font-size: 30px;
+	color: #fefeff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.26);
+	-webkit-font-smoothing: antialiased;
+}
+
+.fonte_branco_18 {
+	font-family: 'FuturaLTLight';
+	text-rendering: optimizeLegibility;
+	font-smooth: always;
+	font-size: 18px;
+	color: #fefeff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.26);
+	-webkit-font-smoothing: antialiased;
+}
+
+/*********************************************************************************/
+/* Fontes Import                                                                 */
+/*********************************************************************************/
+
+
+
+@font-face {
+	font-family: 'FuturaLTLight';
+	src: url('../fonts/FuturaLTLight.eot');
+	src: url('../fonts/FuturaLTLight.eot?#iefix') format('embedded-opentype'), url('../fonts/FuturaLTLight.woff') format('woff'), url('../fonts/FuturaLTLight.ttf') format('truetype'), url('../fonts/FuturaLTLight.svg#FuturaLTLight') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'FuturaLT-Book';
+	src: url('../fonts/futuraltbook.eot');
+	src: url('../fonts/futuraltbook.eot?#iefix') format('embedded-opentype'), url('../fonts/futuraltbook.woff') format('woff'), url('../fonts/futuraltbook.ttf') format('truetype'), url('../fonts/futuraltbook.svg#futuraltbook') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+

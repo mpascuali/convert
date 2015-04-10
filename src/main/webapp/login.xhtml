@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+
+<body class="body_login">
+	<ui:composition template="./template_login.xhtml">
+		<ui:define name="login">
+			<h:form id="formLogin">
+				<p:growl id="messages" sticky="true" />
+				<div id="login_box">
+					<div id="logo_img">
+						<img style="margin-top: 130px" src="img/umbrella1.png" alt="logo" />
+					</div>
+					<section class="signin-container"> <span
+						class="fonte_branco_30">Conversor</span> &nbsp;&nbsp; <span
+						class="fonte_branco_18">-&nbsp; PDF</span>
+					<div class="fields">
+						<p:inputText value="#{loginBean.user.login}" id="username"
+							required="true" label="username" size="30"
+							style="width : 260px; font-size:11px;" tabindex="1" />
+						<p:watermark for="username" value="Login" />
+
+						<p:password id="password" value="#{loginBean.user.password}"
+							promptLabel="Entre com a senha"
+							style="width : 260px; font-size:11px;" tabindex="1" />
+						<p:watermark for="password" value="Password" />
+					</div>
+					<br />
+					<p:commandButton id="loginButton" icon="ui-icon-unlocked"
+						update="formLogin,messages" ajax="false" value="Entrar"
+						action="#{loginBean.verificarLogin}" tabindex="4"
+						styleClass="btlogin">
+						<p:effect type="puff" event="click" for="loginButton">
+							<f:param name="mode" value="'show'" />
+						</p:effect>
+					</p:commandButton> </section>
+				</div>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

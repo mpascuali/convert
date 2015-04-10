@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+<h:head>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+</h:head>
+<h:body>
+	<ui:composition template="./template.xhtml">
+		<ui:define name="content">
+			<h2 style="margin-top:30px">Conversor</h2>
+			<h:form id="form1">
+				<div class="welcome">
+					<h:panelGrid style="margin-top:90px">
+						<p:fileUpload fileUploadListener="#{convertBean.receberArquivos}"
+							mode="advanced" dragDropSupport="false"
+							update="messages, tabela, form1" multiple="true"
+							label="Selecione" cancelLabel="Cancelar" />
+					</h:panelGrid>
+				</div>
+				<!-- ESTILIZAÇÃO HARDCODE PARA ROUBAR O PRIMEFACES-->
+				<style>
+					.ui-datatable{background:#FFFFFF!important; }
+				</style>
+				
+				<p:growl id="messages" showDetail="true" />
+				
+				<p:dataTable style="margin-top:20px" value="#{convertBean.nome}" var="list" id="tabela"
+					emptyMessage="Nenhum arquivo selecionado">
+
+					<f:facet name="header">
+				      Arquivos Selecionados
+				    </f:facet>
+
+					<p:column headerText="Arquivo">
+						<h:outputText value="#{list}" />
+					</p:column>
+					
+				</p:dataTable>
+				
+				<p:commandButton id="botao" style="margin-top:30px"
+					value="Converter" action="#{convertBean.converte}" 
+					update="tabela, tabelaArquivos, messages">
+				</p:commandButton>
+								
+				<p:blockUI block="form1" trigger="botao">
+			    	<p:outputLabel value="Processando..." />
+			        <br />  
+			        <p:graphicImage value="/images/loading.gif"/>  
+			    </p:blockUI>
+
+				<br/><br/>
+				<h2>Arquivos Enviados</h2>
+				<br/>
+				<p:dataTable id="tabelaArquivos" value="#{arquivoMb.arquivos}" var="arquivo"
+					emptyMessage="Nenhum arquivo selecionado">
+					
+					<p:column headerText="Data">
+						<h:outputText value="#{arquivo.data}">
+							<f:convertDateTime pattern="dd/MM/yyyy"/>
+						</h:outputText>
+					</p:column>
+					
+					<p:column headerText="Arquivo">
+						<h:outputText value="#{arquivo.nome}"/>
+					</p:column>
+				</p:dataTable>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
