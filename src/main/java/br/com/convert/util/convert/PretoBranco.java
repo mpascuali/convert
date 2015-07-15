@@ -24,19 +24,16 @@ public class PretoBranco implements Serializable {
 		PdfParaImagem pdf = new PdfParaImagem();
 		ImagemParaPretoeBranco pretoBranco = new ImagemParaPretoeBranco();
 		
-		System.out.println("Come�ando conversao PDF");
+		System.out.println("Comecando conversao PDF");
 		
 		Vector<BufferedImage> conversor = pdf.convert(caminho);
 		
 		for (int i = 0; i < conversor.size(); i++) {
 			
-			
 			BufferedImage imagem = conversor.get(i);
 			imagens.add(conversor.get(i));
 			BufferedImage imagemPretoBranco = pretoBranco.converterPretoBranco(imagem);
-			
-			ImageIO.write(imagemPretoBranco, "JPG", new File("C:\\Users\\Marcio\\Desktop\\Arquivos\\ConvertidosPdf\\ImagensPretoBranco\\"+i+".jpg"));
-			
+			ImageIO.write(imagemPretoBranco, "JPG", new File("C:\\Users\\Marcio Pascuali\\Desktop\\Arquivos\\ConvertidosPdf\\ImagensPretoBranco\\"+i+".jpg"));
 			
 		}
 		

@@ -58,17 +58,17 @@
 				<br/><br/>
 				<h2>Arquivos Enviados</h2>
 				<br/>
-				<p:dataTable id="tabelaArquivos" value="#{arquivoMb.arquivos}" var="arquivo"
+				<p:dataTable id="tabelaArquivos" value="#{filesController.listFiles}" var="arquivo"
 					emptyMessage="Nenhum arquivo selecionado">
 					
 					<p:column headerText="Data">
-						<h:outputText value="#{arquivo.data}">
+						<h:outputText value="#{arquivo.dateFormated}">
 							<f:convertDateTime pattern="dd/MM/yyyy"/>
 						</h:outputText>
 					</p:column>
 					
 					<p:column headerText="Arquivo">
-						<h:outputText value="#{arquivo.nome}"/>
+						<h:outputText value="#{arquivo.name}"/>
 					</p:column>
 				</p:dataTable>
 			</h:form>
