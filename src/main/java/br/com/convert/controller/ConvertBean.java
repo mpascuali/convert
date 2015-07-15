@@ -34,11 +34,13 @@ public class ConvertBean implements Serializable {
 	private ConverteTodosParaUm conversao;
 	private Map<String, byte[]> mapFiles;
 	private UploadedFile file;
+	private ServiceFile service;
 
 	public ConvertBean() {
 		conversor = new ConverteUmParaUm();
 		conversao = new ConverteTodosParaUm();
 		mapFiles = new HashMap<String, byte[]>();
+		service = new ServiceFile();
 	}
 
 	/**
@@ -71,8 +73,7 @@ public class ConvertBean implements Serializable {
 
 			conversao.converteTodos(listaCaminho);
 
-			FilesController files = new FilesController();
-			files.files();
+			service.listFiles();
 			listaDeArquivos.clear();
 			nome.clear();
 			new ConvertBean();

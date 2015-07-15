@@ -31,4 +31,13 @@ public class FileDao implements Serializable{
 			return list;
 	}
 
+	public void saveFileName(Files file) {
+		EntityManager manager = new JPAUtil().getEntityManager();
+		manager.getTransaction().begin();
+		
+		manager.persist(file);
+		
+		manager.getTransaction().commit();
+		manager.close();
+	}
 }
