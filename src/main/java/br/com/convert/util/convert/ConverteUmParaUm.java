@@ -62,10 +62,7 @@ public class ConverteUmParaUm implements Serializable {
 
 				//Salvando no BD o nome do arquivo na tabela files
 				ServiceFile service = new ServiceFile();
-				Files file = new Files();
-				file.setName(uploadedFile.getFileName());
-				file.setDate(new Date());
-				service.saveFileName(file);
+				service.saveFileName(uploadedFile.getFileName());
 				
 				FacesMessage message = new FacesMessage("Sucesso", uploadedFile.getFileName() + " foi convertido para PDF");
 				FacesContext.getCurrentInstance().addMessage(null, message);

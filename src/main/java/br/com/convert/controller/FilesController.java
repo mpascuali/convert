@@ -8,7 +8,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
 import br.com.convert.model.Files;
-import br.com.convert.util.FormatData;
 
 @ManagedBean
 @ViewScoped
@@ -31,11 +30,11 @@ public class FilesController implements Serializable{
 	public void files(){
 		listFiles = service.listFiles();
 		
-		if(!listFiles.isEmpty()){
+		/*if(!listFiles.isEmpty()){
 			for (Files file : listFiles) {
 				file.setDateFormated(FormatData.dateFormToString("dd/MM/yyyy HH:mm:ss", file.getDate()));
 			}
-		}
+		}*/
 	}
 	
 	public List<Files> getListFiles() {

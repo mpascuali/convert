@@ -1,7 +1,6 @@
 package br.com.convert.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +18,7 @@ public class Files implements Serializable{
 	@GeneratedValue
 	private Long id;
 	
-	private Date date;
+	private String date;
 	private String name;
 	private String dateFormated;
 
@@ -29,10 +28,10 @@ public class Files implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	public Long getId() {

@@ -44,7 +44,7 @@ public class ConvertBean implements Serializable {
 	}
 
 	/**
-	 * Recebe os arquivos da p�gina home.xhtml
+	 * Recebe os arquivos da pagina home.xhtml
 	 * 
 	 * @param event
 	 * @throws IOException

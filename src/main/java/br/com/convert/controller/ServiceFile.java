@@ -12,8 +12,8 @@ public class ServiceFile {
 		return dao.listFiles();
 	}
 
-	public void saveFileName(Files file) {
+	public void saveFileName(String fileName) {
 		FileDao dao = new FileDao();
-		dao.saveFileName(file);
+		dao.saveFileName(fileName);
 	}
 }
