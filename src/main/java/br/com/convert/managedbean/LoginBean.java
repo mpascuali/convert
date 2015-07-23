@@ -1,4 +1,4 @@
-package br.com.convert.controller;
+package br.com.convert.managedbean;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -8,10 +8,10 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
+import br.com.convert.bean.UserBean;
 import br.com.convert.dao.LoginDao;
 import br.com.convert.enums.Constantes;
 import br.com.convert.enums.Session;
-import br.com.convert.model.User;
 import br.com.convert.util.FormatData;
 import br.com.convert.util.SessionAttribute;
 
@@ -19,7 +19,7 @@ import br.com.convert.util.SessionAttribute;
 @SessionScoped
 public class LoginBean implements Serializable {
 	private static final long serialVersionUID = 24902660665520012L;
-	private User user = new User();
+	private UserBean user = new UserBean();
 	private Boolean isValidLogin = false;
 	private String currentDate;
 	private String currentYear;
@@ -38,18 +38,18 @@ public class LoginBean implements Serializable {
 	
 		LoginDao dao = new LoginDao();
 		String ret = "login";
-		if (getuser().getLogin().trim().length() < 1) {
+		if (getUser().getLogin().trim().length() < 1) {
 			FacesContext context = FacesContext.getCurrentInstance();
 			context.addMessage("username", new FacesMessage("* Informe o user de acesso!"));
 			ret = "login";
-		}else if (getuser().getPassword().trim().length() < 1) {
+		}else if (getUser().getPassword().trim().length() < 1) {
 			FacesContext context = FacesContext.getCurrentInstance();
 			context.addMessage("username", new FacesMessage("* Informe a Senha de acesso!"));
 			ret = "login";
 		}else{
-			this.isValidLogin = dao.login(getuser());
+			this.isValidLogin = dao.login(getUser());
 			if (this.isValidLogin) {
-				getuser().setName(SessionAttribute.getSession().getNameUser());
+				getUser().setName(SessionAttribute.getSession().getNameUser());
 				SessionAttribute.setAttributeSession(Session.PROFILE_USER,  SessionAttribute.getSession().getProfile());
 				
 				 
@@ -72,15 +72,14 @@ public class LoginBean implements Serializable {
 	}
 	
  
-	public User getuser() {
-		return this.user;
+
+	public UserBean getUser() {
+		return user;
 	}
 
-	public void setuser(User user) {
+	public void setUser(UserBean user) {
 		this.user = user;
 	}
-
-
 	public void setCurrentDate(String currentDate) {
 		this.currentDate = currentDate;
 	}

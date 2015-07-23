@@ -1,4 +1,4 @@
-package br.com.convert.controller;
+package br.com.convert.managedbean;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -15,7 +15,7 @@ import org.primefaces.model.StreamedContent;
 
 @ManagedBean
 @ViewScoped
-public class FileDownloadController implements Serializable {
+public class FileDownloadMB implements Serializable {
 
 	/**
 	 * 
@@ -24,12 +24,12 @@ public class FileDownloadController implements Serializable {
 
 	private StreamedContent file;
 
-	public FileDownloadController() {
+	public FileDownloadMB() {
     	try{
 	    	InputStream stream = new FileInputStream("C:/Users/Marcio Pascuali/Desktop/Arquivos/ConvertidosPdf/saida/saida.pdf");
 	        file = new DefaultStreamedContent(stream, "application/txt", "saida.pdf");
     	} catch(FileNotFoundException e){
-    		FacesMessage message = new FacesMessage("Falha no download ","Motivo: Não há arquivo para download");
+    		FacesMessage message = new FacesMessage("Falha no download ","Motivo: Nï¿½o hï¿½ arquivo para download");
 			FacesContext.getCurrentInstance().addMessage(null, message);
     		e.printStackTrace();
     	}

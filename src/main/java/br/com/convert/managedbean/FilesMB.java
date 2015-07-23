@@ -1,4 +1,4 @@
-package br.com.convert.controller;
+package br.com.convert.managedbean;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -7,22 +7,23 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
-import br.com.convert.model.Files;
+import br.com.convert.bean.FileBean;
+import br.com.convert.service.ServiceFile;
 
 @ManagedBean
 @ViewScoped
-public class FilesController implements Serializable{
+public class FilesMB implements Serializable{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private List<Files> listFiles;
+	private List<FileBean> listFiles;
 	private ServiceFile service;
 	
-	public FilesController() {
-		listFiles = new ArrayList<Files>();
+	public FilesMB() {
+		listFiles = new ArrayList<FileBean>();
 		service = new ServiceFile();
 		files();
 	}
@@ -37,10 +38,10 @@ public class FilesController implements Serializable{
 		}*/
 	}
 	
-	public List<Files> getListFiles() {
+	public List<FileBean> getListFiles() {
 		return listFiles;
 	}
-	public void setListFiles(List<Files> listFiles) {
+	public void setListFiles(List<FileBean> listFiles) {
 		this.listFiles = listFiles;
 	}
 }

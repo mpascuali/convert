@@ -18,7 +18,7 @@
 			<h:form id="form1">
 				<div class="welcome">
 					<h:panelGrid style="margin-top:90px">
-						<p:fileUpload fileUploadListener="#{convertBean.receberArquivos}"
+						<p:fileUpload fileUploadListener="#{convertMB.receberArquivos}"
 							mode="advanced" dragDropSupport="false"
 							update="messages, tabela, form1" multiple="true"
 							label="Selecione" cancelLabel="Cancelar" />
@@ -31,7 +31,7 @@
 				
 				<p:growl id="messages" showDetail="true" />
 				
-				<p:dataTable style="margin-top:20px" value="#{convertBean.nome}" var="list" id="tabela"
+				<p:dataTable style="margin-top:20px" value="#{convertMB.nome}" var="list" id="tabela"
 					emptyMessage="Nenhum arquivo selecionado">
 
 					<f:facet name="header">
@@ -45,7 +45,7 @@
 				</p:dataTable>
 				
 				<p:commandButton id="botao" style="margin-top:30px"
-					value="Converter" action="#{convertBean.converte}" 
+					value="Converter" action="#{convertMB.converte}" 
 					update="tabela, tabelaArquivos, messages">
 				</p:commandButton>
 								
@@ -58,7 +58,7 @@
 				<br/><br/>
 				<h2>Arquivos Enviados</h2>
 				<br/>
-				<p:dataTable id="tabelaArquivos" value="#{filesController.listFiles}" var="arquivo"
+				<p:dataTable id="tabelaArquivos" value="#{filesMB.listFiles}" var="arquivo"
 					emptyMessage="Nenhum arquivo selecionado">
 					
 					<p:column headerText="Data">

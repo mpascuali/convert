@@ -8,8 +8,8 @@ import java.sql.SQLException;
 
 import org.apache.log4j.Logger;
 
+import br.com.convert.bean.UserBean;
 import br.com.convert.enums.Session;
-import br.com.convert.model.User;
 import br.com.convert.util.SessionAttribute;
 import br.com.peopleway.util.DBUtilMySQL;
 
@@ -22,7 +22,7 @@ public class LoginDao implements Serializable {
 	public LoginDao() {
 	}
 	
-	public Boolean login(User beanLogin) {
+	public Boolean login(UserBean beanLogin) {
 		Boolean ret = false;
 		PreparedStatement prp = null;
 		ResultSet rs = null;

@@ -1,13 +1,13 @@
-package br.com.convert.controller;
+package br.com.convert.service;
 
 import java.util.List;
 
+import br.com.convert.bean.FileBean;
 import br.com.convert.dao.FileDao;
-import br.com.convert.model.Files;
 
 public class ServiceFile {
 
-	public List<Files> listFiles(){
+	public List<FileBean> listFiles(){
 		FileDao dao = new FileDao();
 		return dao.listFiles();
 	}

@@ -2,7 +2,6 @@ package br.com.convert.util.convert;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
@@ -11,8 +10,7 @@ import javax.faces.context.FacesContext;
 import org.apache.commons.io.IOUtils;
 import org.primefaces.model.UploadedFile;
 
-import br.com.convert.controller.ServiceFile;
-import br.com.convert.model.Files;
+import br.com.convert.service.ServiceFile;
 import br.com.convert.util.convert.img.ConversaoAPartirDeImagem;
 import br.com.convert.util.convert.office.ConversaoAPartirDePlaniliaOffice;
 import br.com.convert.util.convert.office.ConversaoAPartirDeTextoOffice;

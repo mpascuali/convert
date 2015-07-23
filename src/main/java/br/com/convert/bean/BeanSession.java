@@ -1,7 +1,7 @@
 /**
  * 
  */
-package br.com.convert.model;
+package br.com.convert.bean;
 
 /**
  * @author dchagas

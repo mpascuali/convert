@@ -7,8 +7,8 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
+import br.com.convert.bean.BeanSession;
 import br.com.convert.enums.Session;
-import br.com.convert.model.BeanSession;
 
 public class SessionAttribute implements Serializable{
 	private static final long serialVersionUID = -7717012124434345222L;

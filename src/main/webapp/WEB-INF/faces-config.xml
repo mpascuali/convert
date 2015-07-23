@@ -21,6 +21,6 @@
 	</navigation-rule>
 
 	<lifecycle>
-		<phase-listener>br.com.convert.controller.ListenerFases</phase-listener>
+		<phase-listener>br.com.convert.managedbean.ListenerFases</phase-listener>
 	</lifecycle>
 </faces-config>

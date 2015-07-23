@@ -6,9 +6,6 @@
 	<persistence-unit name="convert" transaction-type="RESOURCE_LOCAL">
 
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		
-		<class>br.com.convert.model.User</class>
-		<class>br.com.convert.model.Files</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.user" value="root" />

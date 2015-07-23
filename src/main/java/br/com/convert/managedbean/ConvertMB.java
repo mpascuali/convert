@@ -1,4 +1,4 @@
-package br.com.convert.controller;
+package br.com.convert.managedbean;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -16,12 +16,13 @@ import org.apache.commons.io.IOUtils;
 import org.primefaces.event.FileUploadEvent;
 import org.primefaces.model.UploadedFile;
 
+import br.com.convert.service.ServiceFile;
 import br.com.convert.util.convert.ConverteTodosParaUm;
 import br.com.convert.util.convert.ConverteUmParaUm;
 
 @ManagedBean
 @ViewScoped
-public class ConvertBean implements Serializable {
+public class ConvertMB implements Serializable {
 
 	/**
 	 * 
@@ -36,7 +37,7 @@ public class ConvertBean implements Serializable {
 	private UploadedFile file;
 	private ServiceFile service;
 
-	public ConvertBean() {
+	public ConvertMB() {
 		conversor = new ConverteUmParaUm();
 		conversao = new ConverteTodosParaUm();
 		mapFiles = new HashMap<String, byte[]>();
@@ -76,7 +77,7 @@ public class ConvertBean implements Serializable {
 			service.listFiles();
 			listaDeArquivos.clear();
 			nome.clear();
-			new ConvertBean();
+			new ConvertMB();
 		}
 	}
 

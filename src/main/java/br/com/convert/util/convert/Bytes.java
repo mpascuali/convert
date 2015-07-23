@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 import org.apache.commons.io.IOUtils;
 
-import br.com.convert.controller.ConvertBean;
+import br.com.convert.managedbean.ConvertMB;
 
 public class Bytes implements Serializable {
 	
@@ -16,7 +16,7 @@ public class Bytes implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	public byte[] obterArquivosEmBytes(String arquivo) throws IOException {
-		return IOUtils.toByteArray(ConvertBean.class.getResourceAsStream(arquivo));
+		return IOUtils.toByteArray(ConvertMB.class.getResourceAsStream(arquivo));
 	}
 
 	public void escreverArquivosEmBytes(byte[] arquivo, String nome) throws IOException {

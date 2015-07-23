@@ -1,4 +1,4 @@
-package br.com.convert.controller;
+package br.com.convert.managedbean;
 
 import java.sql.Connection;
 import java.sql.SQLException;

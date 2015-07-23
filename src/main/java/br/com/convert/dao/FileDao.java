@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import br.com.convert.model.Files;
+import br.com.convert.bean.FileBean;
 import br.com.convert.util.FormatData;
 import br.com.peopleway.util.DBUtilMySQL;
 
@@ -24,8 +24,8 @@ public class FileDao implements Serializable{
 	private Connection conn = null;
 	private PreparedStatement prp = null;
 	private ResultSet rs = null;
-	private List<Files> list = null;
-	Files bean = null;
+	private List<FileBean> list = null;
+	FileBean bean = null;
 	
 	
 	public void saveFileName(String nomeArquivo){
@@ -62,16 +62,16 @@ public class FileDao implements Serializable{
 		}
 	}
 	
-	public List<Files> listFiles() {
+	public List<FileBean> listFiles() {
 		
-		list = new ArrayList<Files>();
+		list = new ArrayList<FileBean>();
 		try {
 			conn = DBUtilMySQL.getPooledConnection();
 			prp = conn.prepareStatement("SELECT * FROM files ORDER BY date DESC;");
 			rs = prp.executeQuery();
 			
 			while(rs.next()){
-				bean = new Files();
+				bean = new FileBean();
 				bean.setName(rs.getString("name"));
 				bean.setDate(FormatData.dateFormatedToString("dd/MM/yyyy HH:mm:ss", FormatData.stringToDate("yyyy-MM-dd HH:mm:ss", rs.getString("date"))));
 				list.add(bean);
