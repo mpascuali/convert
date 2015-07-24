@@ -3,11 +3,17 @@
  */
 package br.com.convert.bean;
 
+import java.io.Serializable;
+
 /**
  * @author dchagas
  *
  */
-public class BeanSession {
+public class BeanSession implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String nameCorp;
 	private Long idClient;
 	private Long idUsers;

@@ -4,16 +4,28 @@ import java.util.List;
 
 import br.com.convert.bean.FileBean;
 import br.com.convert.dao.FileDao;
+import br.com.convert.interfaces.InterfaceFile;
 
-public class ServiceFile {
+public class ServiceFile implements InterfaceFile{
 
-	public List<FileBean> listFiles(){
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	public List<FileBean> listFiles() {
 		FileDao dao = new FileDao();
 		return dao.listFiles();
 	}
 
+	@Override
 	public void saveFileName(String fileName) {
 		FileDao dao = new FileDao();
 		dao.saveFileName(fileName);
 	}
+	
+	
+
+
 }
